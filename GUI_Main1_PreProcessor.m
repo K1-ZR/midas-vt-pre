@@ -63,21 +63,21 @@ SetGlobal;
 CurrentFolder = pwd;
 TestType   = get(handles.popupmenu1,'Value')-1;
 
-% 1 Direct tension test (Square RVE)
-% 2 Direct shear test (Square RVE)
+% 1 Simple tension test (Square RVE)
+% 2 Simple shear test (Square RVE)
 % 3 Three-point beam bending test
 % 4 Four-point beam bending test
 % 5 Semi-circular bending test
 % 6 Indirect tension test
 
 if  TestType==1
-    im = imread([CurrentFolder, '\Gallery\', 'DTT.png']);
+    im = imread([CurrentFolder, '\Gallery\', 'STT.png']);
     set(handles.text4, 'visible', 'on'); set(handles.edit2, 'visible', 'on'); set(handles.text5, 'visible', 'on'); set(handles.edit3, 'visible', 'on');
     set(handles.text6, 'visible', 'off'); set(handles.edit4, 'visible', 'off'); set(handles.text31, 'visible', 'off'); set(handles.edit25, 'visible', 'off');
     set(handles.text22,'visible', 'on'); set(handles.edit17, 'visible', 'on','enable','off'); set(handles.text23, 'visible', 'on'); set(handles.edit18, 'visible', 'on','enable','on');
     set(handles.text8, 'visible', 'off'); set(handles.edit6, 'visible', 'off'); set(handles.text7, 'visible', 'off'); set(handles.edit5, 'visible', 'off');
 elseif TestType==2
-    im = imread([CurrentFolder, '\Gallery\', 'DST.png']);
+    im = imread([CurrentFolder, '\Gallery\', 'SST.png']);
     set(handles.text4, 'visible', 'on'); set(handles.edit2, 'visible', 'on'); set(handles.text5, 'visible', 'on'); set(handles.edit3, 'visible', 'on');
     set(handles.text6, 'visible', 'off'); set(handles.edit4, 'visible', 'off'); set(handles.text31, 'visible', 'off'); set(handles.edit25, 'visible', 'off');
     set(handles.text22,'visible', 'on'); set(handles.edit17, 'visible', 'on','enable','off'); set(handles.text23, 'visible', 'on'); set(handles.edit18, 'visible', 'on','enable','on');
