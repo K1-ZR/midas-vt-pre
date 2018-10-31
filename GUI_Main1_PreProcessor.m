@@ -112,7 +112,8 @@ figure(1); imshow(im);
 set(figure(1), 'menubar', 'none');
 set(figure(1),'name','Specimen geometry');
 
-function edit2_Callback(hObject, eventdata, handles)
+function pushbutton6_Callback(hObject, eventdata, handles)
+% automaatically fill CZw and CZh
 TestType   = get(handles.popupmenu1,'Value')-1;
 if TestType==1 || TestType==2
     set(handles.edit17,'string',get(handles.edit2,'string'));
@@ -122,14 +123,6 @@ elseif TestType==6
     set(handles.edit3,'string',get(handles.edit2,'string'));
 end
 
-function edit3_Callback(hObject, eventdata, handles)
-TestType   = get(handles.popupmenu1,'Value')-1;
-% if TestType==1 || TestType==2 || TestType==3 || TestType==4 || TestType==5 
-%     set(handles.edit18,'string',get(handles.edit3,'string'));
-% end
-
-
-function pushbutton6_Callback(hObject, eventdata, handles)
 SetGlobal;
 Dim_w=0; Dim_h=0; 
 Dim_a=0; Dim_b=0;

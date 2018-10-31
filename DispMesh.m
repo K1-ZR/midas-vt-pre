@@ -36,12 +36,16 @@ if DetailPlotIndex==0
     end
     % ---------------------------------------------------------------------
 
-    sampleHight = abs(max(Coo(TT_T,3)) - max(Coo(TT_T,3)));
+    sampleHight = abs( min(Coo(:,3)) - max(Coo(:,3)) );
+
     % disp boundary condition
     if     TestType==1
+        % plot loading point
         % quiver(x,y,u,v)
-        quiver(oo(TT_T,2),Coo(TT_T,3),0,sampleHight/10)
-    	% plot(Coo(TT_T,2),Coo(TT_T,3),'Color','none','Marker','^','MarkerSize',Support_MarkerSize,'MarkerEdgeColor','k','MarkerFaceColor','k');
+        quiverU = ones(size(TT_T,1),1) * 0.0;
+        quiverV = ones(size(TT_T,1),1) * sampleHight/20;
+        quiver(Coo(TT_T,2),Coo(TT_T,3),quiverU,quiverV)
+        % plot support
     	plot(Coo(TT_B,2),Coo(TT_B,3),'Color','none','Marker','^','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
     elseif TestType==2
     	plot(Coo(ST_T,2),Coo(ST_T,3),'Color','none','Marker','>','MarkerSize',Support_MarkerSize,'MarkerEdgeColor','k','MarkerFaceColor','k');
