@@ -35,11 +35,14 @@ if DetailPlotIndex==0
         end
     end
     % ---------------------------------------------------------------------
+
+    sampleHight = abs(max(Coo(TT_T,3)) - max(Coo(TT_T,3)));
     % disp boundary condition
     if     TestType==1
-    	plot(Coo(TT_T,2),Coo(TT_T,3),'Color','none','Marker','^','MarkerSize',Support_MarkerSize,'MarkerEdgeColor','k','MarkerFaceColor','k');
-    	plot(Coo(TT_B,2),Coo(TT_B,3),'Color','none','Marker','o','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
-        plot(Coo(TT_L,2),Coo(TT_L,3),'Color','none','Marker','o','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
+        % quiver(x,y,u,v)
+        quiver(oo(TT_T,2),Coo(TT_T,3),0,sampleHight/10)
+    	% plot(Coo(TT_T,2),Coo(TT_T,3),'Color','none','Marker','^','MarkerSize',Support_MarkerSize,'MarkerEdgeColor','k','MarkerFaceColor','k');
+    	plot(Coo(TT_B,2),Coo(TT_B,3),'Color','none','Marker','^','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
     elseif TestType==2
     	plot(Coo(ST_T,2),Coo(ST_T,3),'Color','none','Marker','>','MarkerSize',Support_MarkerSize,'MarkerEdgeColor','k','MarkerFaceColor','k');
     	plot(Coo(ST_B,2),Coo(ST_B,3),'Color','none','Marker','x','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
