@@ -9,6 +9,6 @@ The current version is able to simulate the following test configurations.
 MIDAS Virtual Tester Preprocessor, MIDAS-VT-Pre, is a part of MIDAS-VT package. MIDAS-VT-Pre generate Finite Element model of the test samples.  
 
 <p align="center">
-  <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/Gallery/MIDAS-VT-Pre-flowchart.png" width="512" title="midas-vt-pre flowchart">
+  <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/Gallery/MIDAS-VT-Pre-flowchart.png" width="600" title="midas-vt-pre flowchart">
 </p>
 
