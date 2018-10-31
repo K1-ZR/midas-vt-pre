@@ -174,10 +174,6 @@ set(handles.edit21, 'enable', 'on');
 set(handles.pushbutton5, 'enable', 'on');
 
 
-function slider1_Callback(hObject, eventdata, handles)
-SegmentationThreshold = get(handles.slider1, 'Value');
-set(handles.edit23, 'String', num2str(SegmentationThreshold));
-
 function pushbutton5_Callback(hObject, eventdata, handles)
 SetGlobal;
 
