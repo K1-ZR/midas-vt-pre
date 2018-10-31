@@ -37,7 +37,6 @@ set(handles.uipanel8, 'visible', 'off');
 set(handles.pushbutton2, 'enable', 'off');  
 set(handles.pushbutton3, 'visible', 'off');
 
-set(handles.slider1,'sliderstep',[0.002 0.002],'max',1,'min',0,'Value',0.5)
 set(handles.edit23, 'String', num2str(0.5));
 
 % 3
@@ -167,7 +166,6 @@ I = imread([MixtureImagePath, MixtureImageName]);
 I = rgb2gray(I);
 Level = graythresh(I);                                                 
 set(handles.edit23, 'String', num2str(Level));    
-set(handles.slider1, 'Value', Level);
 
 set(handles.text27, 'enable', 'on');
 set(handles.edit21, 'enable', 'on');
@@ -177,8 +175,7 @@ set(handles.pushbutton5, 'enable', 'on');
 function pushbutton5_Callback(hObject, eventdata, handles)
 SetGlobal;
 
-SegmentationThreshold = get(handles.slider1, 'Value');
-set(handles.edit23, 'String', num2str(SegmentationThreshold));
+SegmentationThreshold = str2num( get(handles.edit23,'string') );
 
 MinFineParticleSize = str2num( get(handles.edit21,'string') );
 if isempty(get(handles.edit21,'string')); MinFineParticleSize=0; end

@@ -84,7 +84,10 @@ Geo_MaxRow = 0;
 if HeteroIndex==1
     Geo_MaxRow = 2 + 2*  (max(cellfun(@length,BoundXY)) + 1); % 2 initial values+ x & y
 end
-if Geo_MaxRow < size(GePhase1_Rec,1);   Geo_MaxRow = size(GePhase1_Rec,1);  end
+
+if Geo_MaxRow < size(GePhase1_Rec,1)   
+    Geo_MaxRow = size(GePhase1_Rec,1);  
+end
 % .........................................................................
 % Combine Geometries: CZ + Phase1 + Phase2 s
 GePhase1_Rec = [GePhase1_Rec; zeros(Geo_MaxRow - size(GePhase1_Rec,1),1)];
