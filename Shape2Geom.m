@@ -44,8 +44,8 @@ elseif TestType == 3
     % -------------------------------------------------------------------------
 elseif TestType == 4
 
-    GePhase1_Rec  = [2  9   0	A	W/2   W-A	W	W	W-B	B  0  ...
-                             0   0    0     0    0   H   H   H  H]';
+    GePhase1_Rec  = [2  10  0	A	W/2   W-A	W	W	W-B W/2	B  0  ...
+                            0   0    0     0    0   H   H   H   H  H]';
     GeCohZone = [2  6 (W-CZW)/2   W/2  (W+CZW)/2   (W+CZW)/2     W/2  (W-CZW)/2 ...
                        NL         NL     NL         CZH           CZH   CZH]';
     GePhase1_Cir  = [1  W/2 ... Big dummy circle to sync formula
