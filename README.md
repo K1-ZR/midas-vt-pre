@@ -7,9 +7,9 @@ The current version is able to simulate the following test configurations.
 
 # What is MIDAS-VT-Pre?
 MIDAS Virtual Tester Preprocessor, MIDAS-VT-Pre, is a part of MIDAS-VT package. MIDAS-VT-Pre generate Finite Element model of the test samples.
-Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre gives two options:
-    * Case I: generates the FE model directly from the sample image or sample geometry
-    * Case II: to add cohessive elemnets into regular FE mesh which is generated in advance 
+Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre gives two options:  
+    * Case I: generates the FE model directly from the sample image or sample geometry  
+    * Case II: to add cohessive elemnets into regular FE mesh which is generated in advance  
 <p align="center">
   <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/Gallery/MIDAS-VT-Pre-flowchart.png" width="600" title="midas-vt-pre flowchart">
 </p>
