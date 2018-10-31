@@ -44,7 +44,7 @@ if DetailPlotIndex==0
         % quiver(x,y,u,v)
         quiverU = ones(size(TT_T,1),1) * 0.0;
         quiverV = ones(size(TT_T,1),1) * sampleHight/15;
-        quiver(Coo(TT_T,2),Coo(TT_T,3),quiverU,quiverV,'k','LineWidth',2)
+        quiver(Coo(TT_T,2),Coo(TT_T,3),quiverU,quiverV,'k','MaxHeadSize',1,'LineWidth',2)
         % plot support
     	plot(Coo(TT_B,2),Coo(TT_B,3),'Color','none','Marker','^','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
     elseif TestType==2
@@ -52,7 +52,7 @@ if DetailPlotIndex==0
         % quiver(x,y,u,v)
         quiverU = ones(size(ST_T,1),1) * sampleHight/15;
         quiverV = ones(size(ST_T,1),1) * 0.0;
-        quiver(Coo(ST_T,2),Coo(ST_T,3),quiverU,quiverV,'k','LineWidth',2)
+        quiver(Coo(ST_T,2),Coo(ST_T,3),quiverU,quiverV,'k','MaxHeadSize',1,'LineWidth',2)
         % plot support
     	plot(Coo(ST_B,2),Coo(ST_B,3),'Color','none','Marker','^','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
     elseif TestType==3        
@@ -60,7 +60,7 @@ if DetailPlotIndex==0
         % quiver(x,y,u,v)
         quiverU = ones(size(TPBT_LP,1),1) * 0.0;
         quiverV = ones(size(TPBT_LP,1),1) * -sampleHight/15;
-        quiver(Coo(TPBT_LP,2),Coo(TPBT_LP,3),quiverU,quiverV,'k','LineWidth',2)
+        quiver(Coo(TPBT_LP,2),Coo(TPBT_LP,3),quiverU,quiverV,'k','MaxHeadSize',1,'LineWidth',2)
         % plot support
         plot(Coo(TPBT_LS,2),Coo(TPBT_LS,3),'Color','none','Marker','^','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
         plot(Coo(TPBT_RS,2),Coo(TPBT_RS,3),'Color','none','Marker','o','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
@@ -69,11 +69,11 @@ if DetailPlotIndex==0
         % quiver(x,y,u,v)
         quiverU = ones(size(FPBT_LLP,1),1) * 0.0;
         quiverV = ones(size(FPBT_LLP,1),1) * -sampleHight/15;
-        quiver(Coo(FPBT_LLP,2),Coo(FPBT_LLP,3),quiverU,quiverV,'k','LineWidth',2)
+        quiver(Coo(FPBT_LLP,2),Coo(FPBT_LLP,3),quiverU,quiverV,'k','MaxHeadSize',1,'LineWidth',2)
         
         quiverU = ones(size(FPBT_RLP,1),1) * 0.0;
         quiverV = ones(size(FPBT_RLP,1),1) * -sampleHight/15;
-        quiver(Coo(FPBT_RLP,2),Coo(FPBT_RLP,3),quiverU,quiverV,'k','LineWidth',2)
+        quiver(Coo(FPBT_RLP,2),Coo(FPBT_RLP,3),quiverU,quiverV,'k','MaxHeadSize',1,'LineWidth',2)
         
         % plot support
         plot(Coo(FPBT_LS,2),Coo(FPBT_LS,3),'Color','none','Marker','^','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
@@ -83,7 +83,7 @@ if DetailPlotIndex==0
         % quiver(x,y,u,v)
         quiverU = ones(size(SCBT_LP,1),1) * 0.0;
         quiverV = ones(size(SCBT_LP,1),1) * -sampleHight/15;
-        quiver(Coo(SCBT_LP,2),Coo(SCBT_LP,3),quiverU,quiverV,'k','LineWidth',2)
+        quiver(Coo(SCBT_LP,2),Coo(SCBT_LP,3),quiverU,quiverV,'k','MaxHeadSize',1,'LineWidth',2)
         % plot support
         plot(Coo(SCBT_LS,2),Coo(SCBT_LS,3),'Color','none','Marker','^','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
         plot(Coo(SCBT_RS,2),Coo(SCBT_RS,3),'Color','none','Marker','o','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
@@ -92,7 +92,7 @@ if DetailPlotIndex==0
         % quiver(x,y,u,v)
         quiverU = ones(size(ITT_TLP,1),1) * 0.0;
         quiverV = ones(size(ITT_TLP,1),1) * -sampleHight/15;
-        quiver(Coo(ITT_TLP,2),Coo(ITT_TLP,3),quiverU,quiverV,'k','LineWidth',2)
+        quiver(Coo(ITT_TLP,2),Coo(ITT_TLP,3),quiverU,quiverV,'k','MaxHeadSize',1,'LineWidth',2)
         % plot support
         plot(Coo(ITT_BS,2),Coo(ITT_BS,3),'Color','none','Marker','o','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
     end
