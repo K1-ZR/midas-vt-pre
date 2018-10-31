@@ -62,7 +62,7 @@ if DetailPlotIndex==0
         quiverV = ones(size(TPBT_LP,1),1) * -sampleHight/15;
         quiver(Coo(TPBT_LP,2),Coo(TPBT_LP,3),quiverU,quiverV,'k','MaxHeadSize',1,'LineWidth',2)
         % plot support
-        plot(Coo(TPBT_LS,2),Coo(TPBT_LS,3),'Color','none','Marker','^','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
+        plot(Coo(TPBT_LS,2),Coo(TPBT_LS,3),'Color','none','Marker','o','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
         plot(Coo(TPBT_RS,2),Coo(TPBT_RS,3),'Color','none','Marker','o','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
     elseif TestType==4
         % plot loading point
@@ -76,7 +76,7 @@ if DetailPlotIndex==0
         quiver(Coo(FPBT_RLP,2),Coo(FPBT_RLP,3),quiverU,quiverV,'k','MaxHeadSize',1,'LineWidth',2)
         
         % plot support
-        plot(Coo(FPBT_LS,2),Coo(FPBT_LS,3),'Color','none','Marker','^','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
+        plot(Coo(FPBT_LS,2),Coo(FPBT_LS,3),'Color','none','Marker','o','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
         plot(Coo(FPBT_RS,2),Coo(FPBT_RS,3),'Color','none','Marker','o','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
     elseif TestType==5
         % plot loading point
@@ -85,7 +85,7 @@ if DetailPlotIndex==0
         quiverV = ones(size(SCBT_LP,1),1) * -sampleHight/15;
         quiver(Coo(SCBT_LP,2),Coo(SCBT_LP,3),quiverU,quiverV,'k','MaxHeadSize',1,'LineWidth',2)
         % plot support
-        plot(Coo(SCBT_LS,2),Coo(SCBT_LS,3),'Color','none','Marker','^','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
+        plot(Coo(SCBT_LS,2),Coo(SCBT_LS,3),'Color','none','Marker','o','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
         plot(Coo(SCBT_RS,2),Coo(SCBT_RS,3),'Color','none','Marker','o','MarkerSize',Support_MarkerSize,'LineWidth', Support_LineWidth,'MarkerEdgeColor','k','MarkerFaceColor','k');
     elseif TestType==6
         % plot loading point
