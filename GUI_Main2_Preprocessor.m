@@ -113,9 +113,13 @@ TestType   = get(handles.popupmenu1,'Value')-1;
 
 NumRegEl = size(Con_O,1);
 
-if isempty(El_Phase2) == 1; HeteroIndex = 0;
-else                      ; HeteroIndex = 1;
+if isempty(El_Phase2) == 1 
+    HeteroIndex = 0;
+else
+    HeteroIndex = 1;
 end
+
+DispMesh(Coo_O, Con_O, size(Con_O,1));
 
 set(handles.pushbutton9,'enable','on')
 
