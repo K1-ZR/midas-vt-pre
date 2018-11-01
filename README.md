@@ -18,3 +18,14 @@ Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre gives two options:
   <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/Gallery/MIDAS-VT-Pre-flowchart.png" width="500" title="midas-vt-pre flowchart">
 </p>
 
+# Installation
+* make sure you have all files in the release package: 
+Gallery folder, MIDAS_VT_Pre.exe, splash.PNG
+2.	Prerequisites: 
+Verify the suitable MATLAB Runtime is installed on your computer.
+3.	Run target software: 
+MIDAS_VT_Pre.exe  
+
+**Note:** all the output messages will be stored in STATUS.txt for future reference.
+**Note:** The execution may take several minutes.
+
