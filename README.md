@@ -22,7 +22,7 @@ Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre has two options:
 </p>
 
 # Installation
-* make sure you have all files in the release package: 
+1. make sure you have all files in the release package: 
 Gallery folder, MIDAS_VT_Pre.exe, splash.PNG
 2.	Prerequisites: 
 Verify the suitable MATLAB Runtime is installed on your computer.
