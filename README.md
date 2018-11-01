@@ -13,7 +13,7 @@ The blue areas represent potential crack regions.
 
 # What is MIDAS-VT-Pre?
 MIDAS Virtual Tester Preprocessor, MIDAS-VT-Pre, is a part of MIDAS-VT package. MIDAS-VT-Pre generate Finite Element model of the test samples.
-Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre gives two options:  
+Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre has two options:  
 * Case I: generates the FE model directly from the sample image or sample geometry  
 * Case II: to add cohessive elemnets into regular FE mesh which is generated in advance  
   
