@@ -26,7 +26,7 @@ Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre has two options:
 Gallery folder, MIDAS_VT_Pre.exe, splash.PNG  
 2.	Prerequisites:  
 Verify the suitable MATLAB Runtime is installed on your computer.  
-3.	Run target software:  
+3.	Run the target executable:  
 MIDAS_VT_Pre.exe   
 
 **Note:** all the output messages will be stored in STATUS.txt for future reference.  
