@@ -24,8 +24,10 @@ Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre has two options:
 
 # Installation
 1. Download the latest version, midas-vt-pre.rar, from [release](https://github.com/K1-ZR/midas-vt-pre/releases) page. Then unzip the file.  
-2. make sure you have all files in the release package:   
-Gallery folder, MIDAS_VT_Pre.exe, splash.PNG  
+2. Make sure you have all necessary files in the release package:   
+  * Gallery folder
+  * MIDAS_VT_Pre.exe 
+  * splash.PNG  
 3. Prerequisites:  
 Verify the suitable MATLAB Runtime is installed on your computer.  
 4. Run the target executable:  
