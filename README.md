@@ -26,9 +26,9 @@ Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre has two options:
 1. Download the .rar file from release tab. Then unzip the file.  
 2. make sure you have all files in the release package:   
 Gallery folder, MIDAS_VT_Pre.exe, splash.PNG  
-3.	Prerequisites:  
+3. Prerequisites:  
 Verify the suitable MATLAB Runtime is installed on your computer.  
-4.	Run the target executable:  
+4. Run the target executable:  
 MIDAS_VT_Pre.exe   
 
 **Note:** all the output messages will be stored in STATUS.txt for future reference.  
