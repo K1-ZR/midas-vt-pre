@@ -29,7 +29,7 @@ Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre has two options:
   * MIDAS_VT_Pre.exe 
   * splash.PNG  
 3. Prerequisites:  
-Verify the suitable MATLAB Runtime is installed on your computer.  
+Verify [the suitable MATLAB Runtime](https://www.mathworks.com/products/compiler/matlab-runtime.html?s_cid=BB&nocookie=true) is installed on your computer.  
 4. Run the target executable:  
 MIDAS_VT_Pre.exe   
 
