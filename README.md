@@ -23,15 +23,14 @@ Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre has two options:
 </p>
 
 # Installation
-1. Download the latest version, midas-vt-pre.rar, from [release](https://github.com/K1-ZR/midas-vt-pre/releases) page. Then unzip the file.  
+1. Download the latest version, midas-vt-pre.rar, from [release](https://github.com/K1-ZR/midas-vt-pre/releases) page, Then unzip the file.  
 2. Make sure you have all necessary files in the release package:   
-  * Gallery folder
-  * MIDAS_VT_Pre.exe 
-  * splash.PNG  
-3. Prerequisites:  
-Verify [the suitable MATLAB Runtime](https://www.mathworks.com/products/compiler/matlab-runtime.html?s_cid=BB&nocookie=true) is installed on your computer.  
+    * Gallery folder
+    * MIDAS_VT_Pre.exe 
+    * splash.PNG  
+3. Verify [the suitable MATLAB Runtime](https://www.mathworks.com/products/compiler/matlab-runtime.html?s_cid=BB&nocookie=true) is installed on your computer.  
 4. Run the target executable:  
-MIDAS_VT_Pre.exe   
+    * MIDAS_VT_Pre.exe   
 
 **Note:** all the output messages will be stored in STATUS.txt for future reference.  
 **Note:** The execution may take several minutes.  
