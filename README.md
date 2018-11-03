@@ -6,7 +6,7 @@
 * [**Installation**](https://github.com/K1-ZR/midas-vt-pre/blob/master/README.md#installation)  
 
 # What is MIDAS-VT?
-MIDAS Virtual Tester, MIDAS-VT, is a software package that virtually analyses common experiments on homogenous and heterogenous materials. MIDAS-VT is capable of predicting viscoelastic behavior and crack propagation in smaples.
+MIDAS Virtual Tester, MIDAS-VT, is a software package that virtually analyses common experiments of homogenous and heterogenous materials. MIDAS-VT is capable of predicting viscoelastic behavior and crack propagation in smaples.
 The current version is able to simulate the following test configurations. 
 The blue areas represent potential crack regions.
 <p align="center">
