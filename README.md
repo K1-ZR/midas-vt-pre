@@ -24,7 +24,7 @@ Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre has two options:
 </p>
 
 # Installation
-1. Download the latest version, midas-vt-pre.rar, from [the release page](https://github.com/K1-ZR/midas-vt-pre/releases), Then unzip the file.  
+1. Download the latest version, midas-vt-pre.rar, from [the release page](https://github.com/K1-ZR/midas-vt-pre/releases), then unzip the file.  
 2. Make sure you have all necessary files in the release package:   
     * Gallery folder
     * MIDAS_VT_Pre.exe 
