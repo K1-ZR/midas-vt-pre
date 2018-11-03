@@ -10,7 +10,7 @@ MIDAS Virtual Tester, MIDAS-VT, is a software package that virtually analyses co
 The current version is able to simulate the following test configurations. 
 The blue areas represent potential crack regions.
 <p align="center">
-  <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/Gallery/AT.png" width="400" title="all tests">
+  <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/Gallery/AT.png" width="500" title="all tests">
 </p>  
 
 # What is MIDAS-VT-Pre?
