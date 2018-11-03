@@ -2,7 +2,7 @@
 
 * [**What is MIDAS-VT?**](https://github.com/K1-ZR/midas-vt-pre/blob/master/README.md#what-is-midas-vt)  
 * [**What is MIDAS-VT-Pre?**](https://github.com/K1-ZR/midas-vt-pre/blob/master/README.md#what-is-midas-vt-pre)  
-* [**Link to the user's guide**](https://github.com/K1-ZR/midas-vt-pre/blob/master/MIDAS-VT-User'sGuide.pdf)  
+* [**User's guide**](https://github.com/K1-ZR/midas-vt-pre/blob/master/MIDAS-VT-User'sGuide.pdf)  
 * [**Installation**](https://github.com/K1-ZR/midas-vt-pre/blob/master/README.md#installation)  
 
 # What is MIDAS-VT?
