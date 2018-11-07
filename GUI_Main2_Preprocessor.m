@@ -103,7 +103,7 @@ set(handles.pushbutton7, 'enable', 'on');
 % Input
 function pushbutton1_Callback(hObject, eventdata, handles)
 SetGlobal;
-[FileName, FilePath] = uigetfile({'*.txt'},...
+[FileName, FilePath] = uigetfile({'*.txt';'*.inp'},...
                                   'Select the mesh data');
 
 function popupmenu2_Callback(hObject, eventdata, handles)
