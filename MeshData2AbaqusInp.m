@@ -123,17 +123,17 @@ elseif TestType==3
     BC_Node{2} = TPBT_RS; BC_Txt{2} = 'TPBT_RS';
     BC_Node{3} = TPBT_LP; BC_Txt{3} = 'TPBT_LP';
 elseif TestType==4
-    BC_Node{1} = TPBT_LS; BC_Txt{1} = 'FPBT_LS';
-    BC_Node{2} = TPBT_RS; BC_Txt{2} = 'FPBT_RS';
-    BC_Node{3} = TPBT_LLP; BC_Txt{3} = 'FPBT_LLP';
-    BC_Node{4} = TPBT_RLP; BC_Txt{4} = 'FPBT_RLP';
+    BC_Node{1} = FPBT_LS;  BC_Txt{1} = 'FPBT_LS';
+    BC_Node{2} = FPBT_RS;  BC_Txt{2} = 'FPBT_RS';
+    BC_Node{3} = FPBT_LLP; BC_Txt{3} = 'FPBT_LLP';
+    BC_Node{4} = FPBT_RLP; BC_Txt{4} = 'FPBT_RLP';
 elseif TestType==5
     BC_Node{1} = SCBT_LS; BC_Txt{1} = 'SCBT_LS';
     BC_Node{2} = SCBT_RS; BC_Txt{2} = 'SCBT_RS';
     BC_Node{3} = SCBT_LP; BC_Txt{3} = 'SCBT_LP';
 elseif TestType==6
     BC_Node{1} = ITT_TLP; BC_Txt{1} = 'ITT_TLP';
-    BC_Node{2} = ITT_BS; BC_Txt{2} = 'ITT_BS';
+    BC_Node{2} = ITT_BS;  BC_Txt{2} = 'ITT_BS';
 end
 
 for II=1:numel(BC_Node)
