@@ -207,7 +207,6 @@ set(handles.pushbutton5, 'enable', 'on');
 
 function pushbutton3_Callback(hObject, eventdata, handles)
 SetGlobal;
-close(figure(1));
 
 set(handles.pushbutton5, 'enable', 'off');
 set(handles.pushbutton2, 'enable', 'off');
