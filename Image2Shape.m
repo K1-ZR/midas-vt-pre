@@ -38,7 +38,7 @@ IYDim = Dim_h; % in meter
 % PRELIMINARY JOBs
 % Read Image
 I = imread([MixtureImagePath, MixtureImageName]);
-subplot(2,1,1);imshow(I);
+subplot(1,2,1);imshow(I);
 
 % I size in pixel 
 % YPixel:Pixels along Y axis 
@@ -217,8 +217,8 @@ end
 
 %%
 function PlotObject(BoundObj, XAxisLim, YAxisLim, Title, DuplicatedNodeIndex)
-cla(subplot(2,1,2))
-subplot(2,1,2);
+cla(subplot(1,2,2))
+subplot(1,2,2);
 hold on
 
 if DuplicatedNodeIndex==0
