@@ -88,8 +88,8 @@ elseif TestType == 5
 elseif TestType == 6
     GePhase1_Rec  = [2  6   0	W/2	 W	W	W/2	0  ...
                             0   0    0  H   H   H]';
-    GeCohZone = [2  6 (W-CZW)/2	W/2     (W+CZW)/2   (W+CZW)/2     W/2  (W-CZW)/2 ...
-                       NL        NL      NL          CZH          CZH   CZH]';
+    GeCohZone = [2  6 (W-CZW)/2	W/2    (W+CZW)/2  (W+CZW)/2    W/2  (W-CZW)/2 ...
+                       0        0      0          CZH          CZH   CZH]';
     GePhase1_Cir  = [1  W/2 ...
                         W/2   W/2]';
 end
@@ -110,7 +110,6 @@ GeCohZone    = [GeCohZone;    zeros(Geo_MaxRow - size(GeCohZone,1),1)];
 GePhase1_Cir = [GePhase1_Cir; zeros(Geo_MaxRow - size(GePhase1_Cir,1),1)];
 % -------------------------------------------------------------------------
 % W/ CZ vs W/O CZ
-if isempty(CZH) || isempty(CZW); CZH=0;CZW=0;end 
 if CZH ==0 || CZW == 0
     gd = [GePhase1_Rec];
     ns = char('GePhase1_Rec');

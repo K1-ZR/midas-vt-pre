@@ -35,13 +35,13 @@ end
 % =========================================================================
 % Coo = [N X Y]
 Coo = [[1:size(p,2)]'   p'];
-% disp('Number of nodes=');
-% disp(size(Coo,1));
+disp('Number of nodes=');
+disp(size(Coo,1));
 % -------------------------------------------------------------------------
 % Con [N 1 2 3 4or0] % N is Ascending
 Con = [[1:size(t,2)]'   t(1:3,:)' zeros(size(t,2),1)];
-% disp('Number of nodes=');
-% disp(size(Con,1));
+disp('Number of nodes=');
+disp(size(Con,1));
 
 NumRegEl = size(Con,1);
 % =========================================================================

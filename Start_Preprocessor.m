@@ -20,5 +20,7 @@ clc
 clear all
 clear global
 % =========================================================================
+SetGlobal;
+
 GUI_Start_Preprocessor;
 end

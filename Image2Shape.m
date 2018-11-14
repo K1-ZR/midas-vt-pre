@@ -25,10 +25,15 @@ BoundXY=[];
 % 0 : gives the convex hull, 
 % 1 : gives a compact boundary that envelops the points.
 
-BorderLimFactor = 200;
-ParticleAreaThresholdFactor = 50;
-ParticleDiagThresholdFactor = 20;
+% 1 Simple tension test (Square RVE)
+% 2 Simple shear test (Square RVE)
+% 3 Three-point beam bending test
+% 4 Four-point beam bending test
+% 5 Semi-circular bending test
+% 6 Indirect tension test
+
 % IXDim/BorderLimFactor : max accepted distance that an agg can be nearby the border 
+BorderLimFactor = 100;
 
 IXDim = Dim_w; % in meter
 IYDim = Dim_h; % in meter
@@ -92,8 +97,19 @@ end
 BoundXY = BoundXY(~cellfun(@isempty, BoundXY));
 %     PlotObject(BoundXY, IXDim, IYDim, ' after convexing ',0)
 % =========================================================================
-% in case of SCB: remove two triangular unneccessary object
-if TestType==3
+% REMOVING SMALL PARTICLES -second time - after all adjustments
+for OO=1:size(BoundXY,1)
+    XX = BoundXY{OO,1}(:,1);
+    YY = BoundXY{OO,1}(:,2);
+    ObjectArea = polyarea(XX,YY);
+    if (size(BoundXY{OO,1},1) <= 2)||(ObjectArea <= MinFineParticleSize^2)
+        BoundXY{OO,1} = [];
+    end
+end
+BoundXY = BoundXY(~cellfun(@isempty, BoundXY));
+% =========================================================================
+% in case of SCB: remove unneccessary object at top corners
+if TestType==5
     for OO = 1:size(BoundXY,1)
         ObiCenter = 0;
         for VV = 1: size(BoundXY{OO,1},1)
@@ -109,7 +125,7 @@ end
 % . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 BoundXY = BoundXY(~cellfun(@isempty, BoundXY));
 % =========================================================================
-% REMOVE UNNECESSARY VERTICES
+% REMOVE UNNECESSARY VERTICES using reducem
 % [Xout,Yout,cerr,tol]= reducem(X,Y,tol)
 % reduces the number of vertices in a polygon.
 % tol : can be provided or automatically computed
@@ -121,80 +137,63 @@ for OO=1:size(BoundXY,1)
 end
 BoundXY = BoundXY(~cellfun(@isempty, BoundXY));
 % =========================================================================
-% MERGE adjacent nodes to boundary with boundary
-
-for OO = 1:size(BoundXY,1)
-    MustDeleteNodes = []; 
-    for VV = 1: size(BoundXY{OO,1},1)
-        if TestType==1 || TestType==2
-            if abs(BoundXY{OO,1}(VV,1) - 0) <= IXDim/BorderLimFactor;   BoundXY{OO,1}(VV,1) = 0;    end
-            if abs(BoundXY{OO,1}(VV,1) - IXDim) <= IXDim/BorderLimFactor;   BoundXY{OO,1}(VV,1) = IXDim;    end
-            if abs(BoundXY{OO,1}(VV,2) - 0) <= IYDim/BorderLimFactor;   BoundXY{OO,1}(VV,2) = 0;    end
-            if abs(BoundXY{OO,1}(VV,2) - IYDim) <= IYDim/BorderLimFactor;   BoundXY{OO,1}(VV,2) = IYDim;    end
-        elseif TestType==3
-            if abs(BoundXY{OO,1}(VV,2) - 0) <= IXDim/BorderLimFactor;   BoundXY{OO,1}(VV,2) = 0;    end
-            if abs((BoundXY{OO,1}(VV,1) - IXDim/2)^2 + (BoundXY{OO,1}(VV,2) - 0)^2 - (IXDim/2)^2) <= (IXDim/(1*BorderLimFactor))^2
-                %BoundXY{OO,1}(VV,:) = sqrt((IXDim/2)^2 - (BoundXY{OO,1}(VV,1) - IXDim/2)^2);
-                MustDeleteNodes = [MustDeleteNodes; VV];
-            end
-        end
-    end
-    if ~isempty(MustDeleteNodes)
-        BoundXY{OO,1}(MustDeleteNodes,:) = [];
-    end
-end
-% =========================================================================
-% remove close nodes
+% REMOVE UNNECESSARY VERTICES based on area
 % remove nodes that their absence would not change particle geometry more
 % than areaTol
-
-% ParticleAreaThresholdFactor = 100;
-% ParticleDiagThresholdFactor = 100;
-
+areaTolFactor = 50;
+% areaTol = area/areaTolFactor
 
 for OO = 1:size(BoundXY,1)
-    % find area
+
     XX = BoundXY{OO,1}(:,1);
     YY = BoundXY{OO,1}(:,2);
-    InitialObjectArea = polyarea(XX,YY);
-    
-    % roughly find max diagonal
-    InitialObjectMaxDiag = max([max(XX)-min(XX), max(YY)-min(YY)]);
+    initialObjectArea = polyarea(XX,YY);
     
     % find candidate nodes for deletion
-    MightDeleteNodes = [];
-    for VV = 1: size(BoundXY{OO,1},1)-1
-        AdjacentVerticeDistance= ( (BoundXY{OO,1}(VV,1)-BoundXY{OO,1}(VV+1,1))^2 +...
-                                   (BoundXY{OO,1}(VV,2)-BoundXY{OO,1}(VV+1,2))^2 )^0.5;
-                               
-        if AdjacentVerticeDistance <= (InitialObjectMaxDiag/ParticleDiagThresholdFactor)
-        	
-            MightDeleteNodes = [MightDeleteNodes; VV];
+    mustDeleteNodes = [];
+    for VV = 2: size(BoundXY{OO,1},1)-1
+        XXX = XX;
+        XXX(VV)=[];
+        
+        YYY = YY;
+        YYY(VV)=[];
+
+        newObjectArea = polyarea(XXX,YYY);                   
+        if abs(newObjectArea - initialObjectArea) <= initialObjectArea/areaTolFactor
+            if (isempty(mustDeleteNodes))
+                mustDeleteNodes = [mustDeleteNodes; VV];
+            elseif (VV ~= mustDeleteNodes(end)+1 )
+                mustDeleteNodes = [mustDeleteNodes; VV];
+            end
         
         end
     end
-    
-    % revise candidate nodes
-    MustDeleteNodes = MightDeleteNodes;
-%     for II = 1: size(MightDeleteNodes, 1)
-%         XX(MustDeleteNodes(II)) = [];
-%         YY(MustDeleteNodes(II)) = [];
-%         
-%         CurrentObjectArea = polyarea(XX,YY);
-%         
-%         if abs(InitialObjectArea - CurrentObjectArea) >= (InitialObjectArea/ParticleAreaThresholdFactor)
-%         	
-%             MustDeleteNodes(MustDeletenodes == MightDeleteNodes(II)) = [];
-%         end 
-%     end
-    
+        
     % delete candidate nodes
-    if ~isempty(MustDeleteNodes)
-        BoundXY{OO,1}(MustDeleteNodes,:) = [];
+%     disp(initialObjectArea)
+%     disp(size(mustDeleteNodes,1))
+    if ~isempty(mustDeleteNodes)
+        BoundXY{OO,1}(mustDeleteNodes,:) = [];
+    end
+end
+BoundXY = BoundXY(~cellfun(@isempty, BoundXY));
+% =========================================================================
+% MERGE adjacent nodes to boundary with boundary
+
+for OO = 1:size(BoundXY,1)
+    for VV = 1: size(BoundXY{OO,1},1)
+        if TestType==1 || TestType==2 || TestType==3 || TestType==4 
+            if abs(BoundXY{OO,1}(VV,1) - 0)     <= IXDim/BorderLimFactor;   BoundXY{OO,1}(VV,1) = 0; end
+            if abs(BoundXY{OO,1}(VV,1) - IXDim) <= IXDim/BorderLimFactor;   BoundXY{OO,1}(VV,1) = IXDim; end
+            if abs(BoundXY{OO,1}(VV,2) - 0)     <= IYDim/BorderLimFactor;   BoundXY{OO,1}(VV,2) = 0; end
+            if abs(BoundXY{OO,1}(VV,2) - IYDim) <= IYDim/BorderLimFactor;   BoundXY{OO,1}(VV,2) = IYDim; end
+        elseif TestType==5
+            if abs(BoundXY{OO,1}(VV,2) - 0)     <= IYDim/BorderLimFactor;   BoundXY{OO,1}(VV,2) = 0; end
+        end
     end
 end
 % =========================================================================
-% REMOVING SMALL PARTICLES
+% REMOVING SMALL PARTICLES -second time - after all adjustments
 for OO=1:size(BoundXY,1)
     XX = BoundXY{OO,1}(:,1);
     YY = BoundXY{OO,1}(:,2);

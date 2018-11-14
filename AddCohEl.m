@@ -13,7 +13,7 @@
 %    You should have received a copy of the GNU General Public License
 %    along with this program.  If not, see <https://www.gnu.org/licenses/>.
     
-function [Coor, Conn]=AddCohEl(Coo, Con, NumRegEl)
+function [Coor, Conn]=AddCohEl(Coo, Con, numRegEl)
 %%
 SetGlobal
 % this program only works with triangular (3_Node) mesh (NOT with mix of 4-node and 3_node )
@@ -59,7 +59,7 @@ end
 
 % Find "inner" CZ Nodes (not nodes shared with elements outside CZ)
 Node_CZ=[1:size(Coo,1)]';
-for EE = 1:NumRegEl
+for EE = 1:numRegEl
     if ~ismember(EE,El_CZ)
         Node_CZ = setdiff(Node_CZ,Con(EE,2:4));
     end
@@ -93,7 +93,7 @@ CohEl_Phase1       =[];
 CohEl_Phase2       =[];
 CohEl_InterPhase12 =[];
 
-CohElCounter = NumRegEl;
+CohElCounter = numRegEl;
 
 % tic
 for CE = 1:size(NeiberEl,1)

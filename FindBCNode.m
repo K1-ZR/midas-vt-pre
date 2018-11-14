@@ -13,7 +13,7 @@
 %    You should have received a copy of the GNU General Public License
 %    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-function FindBCNode(Coo, Con, NumRegEl)
+function FindBCNode(Coo, Con, numRegEl)
 SetGlobal;
 %%
 Tolerance = 1e-6;
