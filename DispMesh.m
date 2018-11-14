@@ -36,7 +36,7 @@ if DetailPlotIndex==0
         if ismember(EE,El_Phase2); ColorIndex=[160 160 160]/256; end
         XX = Coo(Con(EE,2:4),2);
         YY = Coo(Con(EE,2:4),3);
-        fill(XX,YY, ColorIndex,'FaceAlpha', 0.6, 'LineWidth', regEl_LineWidth)   
+        fill(XX,YY, ColorIndex,'FaceAlpha', 0.6, 'LineWidth', regEl_LineWidth, 'EdgeColor', ColorIndex*0.65)   
     end
     % ---------------------------------------------------------------------
     % Disp Coh Elemetns
