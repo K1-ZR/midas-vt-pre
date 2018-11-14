@@ -18,6 +18,7 @@ function DispMesh(Coo, Con, NumRegEl)
 SetGlobal
 DetailPlotIndex = 0;
 CohEl_LineWidth = 0.25;
+regEl_LineWidth = 0.25;
 Support_MarkerSize = 5;
 Support_LineWidth = 0.75;
 % =========================================================================
@@ -35,7 +36,7 @@ if DetailPlotIndex==0
         if ismember(EE,El_Phase2); ColorIndex=[160 160 160]/256; end
         XX = Coo(Con(EE,2:4),2);
         YY = Coo(Con(EE,2:4),3);
-        fill(XX,YY, ColorIndex,'FaceAlpha', 0.6)   
+        fill(XX,YY, ColorIndex,'FaceAlpha', 0.6, 'LineWidth', regEl_LineWidth)   
     end
     % ---------------------------------------------------------------------
     % Disp Coh Elemetns
@@ -46,7 +47,7 @@ if DetailPlotIndex==0
             if ismember(EE,CohEl_Phase2);       ColorIndex=[64 64 64]/256; end
             XX = Coo(Con(EE,2:3),2);
             YY = Coo(Con(EE,2:3),3);
-            plot(XX, YY,'Color', ColorIndex, 'LineWidth',CohEl_LineWidth);
+            plot(XX, YY,'FaceColor', ColorIndex, 'LineWidth',CohEl_LineWidth);
         end
     end
     % ---------------------------------------------------------------------
