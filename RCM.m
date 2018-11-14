@@ -13,7 +13,7 @@
 %    You should have received a copy of the GNU General Public License
 %    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-function [Coor, Conn] = RCM(Coo, Con, NumRegEl)
+function [Coor, Conn] = RCM(Coo, Con, numRegEl)
 %%
 SetGlobal;
 % this program reorder numbering based on reverse cuthill mckee algorithem
@@ -31,14 +31,14 @@ AllNode = 1:size(Coo,1);
 AdjMat= sparse(size(Coo,1),size(Coo,1));
 
 % Regular elements
-for EE = 1: NumRegEl
+for EE = 1: numRegEl
     ElNode = Con(EE,2:4); % +1 to skip the first column
     Adjacency = ismember(AllNode,ElNode);
     AdjMat(Adjacency,Adjacency)= 1;
 end
 % if there is Int El
-if size(Con,1) > NumRegEl
-    for EE = NumRegEl+1 : size(Con,1)
+if size(Con,1) > numRegEl
+    for EE = numRegEl+1 : size(Con,1)
         ElNode = [Con(EE,2)   Con(EE,5)]; % corresponding nodes
         Adjacency = ismember(AllNode,ElNode); % 1-4 & 2-3
         AdjMat(Adjacency,Adjacency)= 1;
@@ -73,7 +73,7 @@ BandWidth = (NodeAdjWidth + 1)*2;
 Coor = [NewLabel' Coo(OldLabel,2:3)];
 % -------------------------------------------------------------------------
 % if there is Int El
-if size(Con,1) > NumRegEl
+if size(Con,1) > numRegEl
     MaxNPerEl=4+1;
 else
     MaxNPerEl=3+1;

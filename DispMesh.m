@@ -13,7 +13,7 @@
 %    You should have received a copy of the GNU General Public License
 %    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-function DispMesh(Coo, Con, NumRegEl)
+function DispMesh(Coo, Con, numRegEl)
 %%
 SetGlobal
 DetailPlotIndex = 0;
@@ -31,7 +31,7 @@ hold on
 if DetailPlotIndex==0
     % ---------------------------------------------------------------------
     % Plot Reg El
-    for EE = 1:NumRegEl
+    for EE = 1:numRegEl
         if ismember(EE,El_Phase1); ColorIndex=[102 178 255]/256; end
         if ismember(EE,El_Phase2); ColorIndex=[160 160 160]/256; end
         XX = Coo(Con(EE,2:4),2);
@@ -40,14 +40,14 @@ if DetailPlotIndex==0
     end
     % ---------------------------------------------------------------------
     % Disp Coh Elemetns
-    if size(Con,1) > NumRegEl
-        for EE = NumRegEl+1:size(Con,1)
+    if size(Con,1) > numRegEl
+        for EE = numRegEl+1:size(Con,1)
             if ismember(EE,CohEl_InterPhase12); ColorIndex=[0 102 51]/256; end
             if ismember(EE,CohEl_Phase1);       ColorIndex=[0 0 204]/256; end
             if ismember(EE,CohEl_Phase2);       ColorIndex=[64 64 64]/256; end
             XX = Coo(Con(EE,2:3),2);
             YY = Coo(Con(EE,2:3),3);
-            plot(XX, YY,'FaceColor', ColorIndex, 'LineWidth',CohEl_LineWidth);
+            plot(XX, YY,'Color', ColorIndex, 'LineWidth',CohEl_LineWidth);
         end
     end
     % ---------------------------------------------------------------------
@@ -122,7 +122,7 @@ elseif DetailPlotIndex==1
     hold on
     % =====================================================================
     % Plot Reg El
-    for EE=1:NumRegEl
+    for EE=1:numRegEl
         [ El_Cen_EE, El_Edge_EE, El_EdgeCen_EE ] = El_Specs( EE,Coo,Con );
         % ---------------------------------------------------------------------
         % make shrinked Coo
@@ -157,7 +157,7 @@ elseif DetailPlotIndex==1
     % =========================================================================
     % Disp Coh Elemetns
 
-    for EE = NumRegEl+1:size(Con,1)
+    for EE = numRegEl+1:size(Con,1)
 
         AA = Coo_Shrinked(Con(EE,2),:);
         BB = Coo_Shrinked(Con(EE,3),:);
