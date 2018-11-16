@@ -1,4 +1,4 @@
-To cite this work, use [![DOI](https://zenodo.org/badge/155322004.svg)](https://zenodo.org/badge/latestdoi/155322004) 
+Cite this work by [![DOI](https://zenodo.org/badge/155322004.svg)](https://zenodo.org/badge/latestdoi/155322004) 
 and [This paper](https://www.sciencedirect.com/science/article/pii/S0013794417303703)  
 
 * [**What is MIDAS-VT?**](https://github.com/K1-ZR/midas-vt-pre/blob/master/README.md#what-is-midas-vt)  
