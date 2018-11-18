@@ -38,19 +38,22 @@ if     TestType == 1 || TestType == 2
 
     GePhase1_Rec  = [2  4   0	W	W	0   ...
                             0   0   H   H]';
-    GeCohZone     = [2  4   0	CZW	 CZW  0   ...
-                            0   0    CZH  CZH]';
     GePhase1_Cir  = [1  W/2 ... Big dummy circle to sync formula
                         0	     2*max(H,W)]';
+                    
+    GeCohZone     = [2  4   0	CZW	 CZW  0   ...
+                            0   0    CZH  CZH]';
 % -------------------------------------------------------------------------
 elseif TestType == 3
 
     GePhase1_Rec  = [2  8   0	A	W/2   W-A	W	W	W/2	0  ...
                             0   0    0     0    0   H   H   H]';
-    GeCohZone = [2  6 (W-CZW)/2   W/2  (W+CZW)/2   (W+CZW)/2     W/2  (W-CZW)/2 ...
-                       NL         NL     NL         CZH           CZH   CZH]';
+                        
     GePhase1_Cir  = [1  W/2 ... Big dummy circle to sync formula
                         0   2*max(H,W)]';
+                    
+    GeCohZone = [2  6 (W-CZW)/2   W/2  (W+CZW)/2   (W+CZW)/2     W/2  (W-CZW)/2 ...
+                       NL         NL     NL         CZH           CZH   CZH]';
     
     if NW~=0 && NL~=0
         GeNotch   = [2  5   (W-NW)/2	 (W+NW)/2		(W+NW)/2	  W/2    (W-NW)/2 ...
@@ -61,10 +64,12 @@ elseif TestType == 4
 
     GePhase1_Rec  = [2  10  0	A	W/2   W-A	W	W	W-B W/2	B  0  ...
                             0   0    0     0    0   H   H   H   H  H]';
+                        
+    GePhase1_Cir  = [1  W/2 ... Big dummy circle to sync formula
+                        0   2*max(H,W)]';                    
+                        
     GeCohZone = [2  6 (W-CZW)/2   W/2  (W+CZW)/2   (W+CZW)/2     W/2  (W-CZW)/2 ...
                        NL         NL     NL         CZH           CZH   CZH]';
-    GePhase1_Cir  = [1  W/2 ... Big dummy circle to sync formula
-                        0   2*max(H,W)]';
     
     if NW~=0 && NL~=0
         GeNotch   = [2  5   (W-NW)/2	 (W+NW)/2		(W+NW)/2	  W/2    (W-NW)/2 ...
@@ -75,10 +80,12 @@ elseif TestType == 5
 
     GePhase1_Rec  = [2  8   0	A	W/2   W-A	W	W	W/2	0  ...
                             0   0   0     0     0   H   H   H]';
-    GeCohZone = [2  6 (W-CZW)/2	W/2     (W+CZW)/2   (W+CZW)/2     W/2  (W-CZW)/2 ...
-                       NL        NL      NL          CZH          CZH   CZH]';
+    
     GePhase1_Cir  = [1  W/2 ...
                         0   W/2]';
+                        
+    GeCohZone = [2  6 (W-CZW)/2	W/2     (W+CZW)/2   (W+CZW)/2     W/2  (W-CZW)/2 ...
+                       NL        NL      NL          CZH          CZH   CZH]';
     
     if NW~=0 && NL~=0
          GeNotch   = [2  5   (W-NW)/2	 (W+NW)/2		(W+NW)/2	  W/2    (W-NW)/2 ...
@@ -88,28 +95,34 @@ elseif TestType == 5
 elseif TestType == 6
     GePhase1_Rec  = [2  6   0	W/2	 W	W	W/2	0  ...
                             0   0    0  H   H   H]';
-    GeCohZone = [2  6 (W-CZW)/2	W/2    (W+CZW)/2  (W+CZW)/2    W/2  (W-CZW)/2 ...
-                       0        0      0          CZH          CZH   CZH]';
+    
     GePhase1_Cir  = [1  W/2 ...
                         W/2   W/2]';
+                    
+    GeCohZone = [2  6 (W-CZW)/2	W/2    (W+CZW)/2  (W+CZW)/2    W/2  (W-CZW)/2 ...
+                       0        0      0          CZH          CZH   CZH]';
+    
 end
 
 % =========================================================================
+% Combine Geometries: CZ + Phase1 + Phase2 s
+
 Geo_MaxRow = 0;
 if HeteroIndex==1
-    Geo_MaxRow = 2 + 2*  (max(cellfun(@length,BoundXY)) + 1); % 2 initial values+ x & y
+    Geo_MaxRow = 2 + 2*  (max(cellfun(@length,BoundXY)) + 1);
+    % 2 initial values+ x & y
 end
 
 if Geo_MaxRow < size(GePhase1_Rec,1)   
     Geo_MaxRow = size(GePhase1_Rec,1);  
 end
 % .........................................................................
-% Combine Geometries: CZ + Phase1 + Phase2 s
 GePhase1_Rec = [GePhase1_Rec; zeros(Geo_MaxRow - size(GePhase1_Rec,1),1)];
 GeCohZone    = [GeCohZone;    zeros(Geo_MaxRow - size(GeCohZone,1),1)];
 GePhase1_Cir = [GePhase1_Cir; zeros(Geo_MaxRow - size(GePhase1_Cir,1),1)];
 % -------------------------------------------------------------------------
-% W/ CZ vs W/O CZ
+% combine each part 
+% With CZ vs Without CZ
 if CZH ==0 || CZW == 0
     gd = [GePhase1_Rec];
     ns = char('GePhase1_Rec');
@@ -120,6 +133,7 @@ else
     sf = '( GePhase1_Rec + GeCohZone )';
 end
 % .........................................................................
+% create a geometry for each particle and sum it up
 BoundXY_BeforeUnique = BoundXY;
 for OO = 1:size(BoundXY,1)
     GeAgg = [2;
@@ -134,12 +148,12 @@ for OO = 1:size(BoundXY,1)
     sf = [sf,sprintf('+GeAgg%d',OO)];
 end
 % .........................................................................
+% 
 gd = [gd, GePhase1_Cir];
 ns = char(ns, 'GePhase1_Cir');
 sf = ['(' sf ')' '* GePhase1_Cir' ];
 % .........................................................................
-% if there is a notch
-
+% subtract notch
 CZZoneIndex = 1; % shows zone of cz (based on experience: 1 when no notch, 3 when there is a notch)
 if TestType==3 || TestType==4 || TestType==5
     if NW~=0 && NL~=0
@@ -172,7 +186,7 @@ end
 % making assembled geometry
 [dl,bt] = decsg(gd,sf,ns');
 % ---------------------------------------------------------------------
-% if FAM: adding a middle line
+% if it is homogeneous: adding a middle line
 if TestType == 3 || TestType == 4 || TestType == 5 || TestType == 6
     if HeteroIndex==0
         if CZH == H

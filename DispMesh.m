@@ -17,7 +17,7 @@ function DispMesh(Coo, Con, numRegEl)
 %%
 SetGlobal
 DetailPlotIndex = 0;
-CohEl_LineWidth = 0.25;
+CohEl_LineWidth = 0.15;
 regEl_LineWidth = 0.25;
 Support_MarkerSize = 5;
 Support_LineWidth = 0.75;

@@ -140,7 +140,7 @@ BoundXY = BoundXY(~cellfun(@isempty, BoundXY));
 % REMOVE UNNECESSARY VERTICES based on area
 % remove nodes that their absence would not change particle geometry more
 % than areaTol
-areaTolFactor = 50;
+areaTolFactor = 80;
 % areaTol = area/areaTolFactor
 
 for OO = 1:size(BoundXY,1)
