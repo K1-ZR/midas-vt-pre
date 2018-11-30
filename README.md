@@ -5,7 +5,7 @@
 
 Cite this work by:
 * [![DOI](https://zenodo.org/badge/155322004.svg)](https://zenodo.org/badge/latestdoi/155322004) 
-or [BibTeX file](https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/cite-midas-vt-pre.bib)
+| [BibTeX file](https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/cite-midas-vt-pre.bib)
 * and [this paper](https://www.sciencedirect.com/science/article/pii/S0013794417303703)  
 
 # What is MIDAS-VT?
