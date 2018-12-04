@@ -26,6 +26,9 @@ Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre has two options:
   <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/Gallery/MIDAS-VT-Pre-flowchart.png" width="500" title="midas-vt-pre flowchart">
 </p>
 
+<p align="center">
+  <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/midsa-vt-pre.gif">
+</p>
 # Installation
 1. Download the latest version, midas-vt-pre.rar, from [the release page](https://github.com/K1-ZR/midas-vt-pre/releases), then unzip the file.  
 2. Make sure you have all necessary files in the release package:   
