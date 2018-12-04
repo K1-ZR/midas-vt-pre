@@ -8,6 +8,11 @@ Cite this work by:
 | [BibTeX file](https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/cite-midas-vt-pre.bib)
 * and [this paper](https://www.sciencedirect.com/science/article/pii/S0013794417303703)  
 
+
+<p align="center">
+  <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/midsa-vt-pre.gif">
+</p>
+
 # What is MIDAS-VT?
 MIDAS Virtual Tester, MIDAS-VT, is a software package that virtually analyses common experiments of homogenous and heterogenous materials. MIDAS-VT is capable of predicting viscoelastic behavior and crack propagation in smaples.
 The current version is able to simulate the following test configurations. 
@@ -26,9 +31,6 @@ Overall flow of MIDAS-VT-Pre is shown below. MIDAS-VT-Pre has two options:
   <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/Gallery/MIDAS-VT-Pre-flowchart.png" width="500" title="midas-vt-pre flowchart">
 </p>
 
-<p align="center">
-  <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/midsa-vt-pre.gif">
-</p>
 # Installation
 1. Download the latest version, midas-vt-pre.rar, from [the release page](https://github.com/K1-ZR/midas-vt-pre/releases), then unzip the file.  
 2. Make sure you have all necessary files in the release package:   
