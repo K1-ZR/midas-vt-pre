@@ -11,7 +11,11 @@ Cite this work by:
 
 <p align="center">
   <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/midsa-vt-pre.gif">
-</p>
+</p>  
+
+<p align="center">
+  <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/midas-vt-pre-abaqusdemo.gif">
+</p>  
 
 # What is MIDAS-VT?
 MIDAS Virtual Tester, MIDAS-VT, is a software package that virtually analyses common experiments of homogenous and heterogenous materials. MIDAS-VT is capable of predicting viscoelastic behavior and crack propagation in smaples.
