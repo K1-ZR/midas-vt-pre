@@ -10,11 +10,11 @@ Cite this work by:
 
 
 <p align="center">
-  <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/midsa-vt-pre.gif" width="700">
+  <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/midsa-vt-pre.gif">
 </p>  
 
 <p align="center">
-  <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/midas-vt-pre-abaqusdemo.gif" width="700">
+  <img src="https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/midas-vt-pre-abaqusdemo.gif">
 </p>  
 
 # What is MIDAS-VT?
