@@ -3,7 +3,7 @@
 * [**User's guide**](https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/MIDAS-VT-User'sGuide.pdf)  
 * [**Installation**](https://github.com/K1-ZR/midas-vt-pre/blob/master/README.md#installation)  
 
-Cite this work by:
+To cite this work please use:
 * [![DOI](https://zenodo.org/badge/155322004.svg)](https://zenodo.org/badge/latestdoi/155322004) 
 | [BibTeX file](https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/cite-midas-vt-pre.bib)
 * and [this paper](https://www.sciencedirect.com/science/article/pii/S0013794417303703)  
