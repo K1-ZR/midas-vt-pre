@@ -123,27 +123,32 @@ for CE = 1:size(NeiberEl,1)
     B1 = El_Edge_B(iB,iBB(1));            %     |    |
     B2 = El_Edge_B(iB,iBB(2));            % A_2 0----0 B_2 
     %==========================================================
-    % Correct Numbering    
+    % Correct Numbering for MIDAS   
     % A-1  A_2  B_1  B_2
-    CACB = El_Cen_B - El_Cen_A;
-    A1_A2 = Coor(A2,2:3) - Coor(A1,2:3);
-    
-    if sum(cross([A1_A2 0],[CACB 0]))<=0
-        NewCohEl=[A2 A1 B1 B2];
-    end
-    if sum(cross([A1_A2 0],[CACB 0]))>=0
-        NewCohEl=[A1 A2 B2 B1];
-    end
-    % ---------------------------------------------------------------------
-    A1_A2 = Coor(NewCohEl(2),2:3) - Coor(NewCohEl(1),2:3);
-    
-    if     A1_A2(1)>=0  && A1_A2(2)>=0; Quadrant=1;
-    elseif A1_A2(1)<0   && A1_A2(2)>0;  Quadrant=2;
-    elseif A1_A2(1)<=0  && A1_A2(2)<=0; Quadrant=3;
-    elseif A1_A2(1)>0   && A1_A2(2)<0;  Quadrant=4;end
-    
-    if Quadrant==2 || Quadrant==3
-        NewCohEl = [NewCohEl(3) NewCohEl(4) NewCohEl(1) NewCohEl(2)];
+    if isForMIDAS==1
+        CACB = El_Cen_B - El_Cen_A;
+        A1_A2 = Coor(A2,2:3) - Coor(A1,2:3);
+        
+        if sum(cross([A1_A2 0],[CACB 0]))<=0
+            NewCohEl=[A2 A1 B1 B2];
+        end
+        if sum(cross([A1_A2 0],[CACB 0]))>=0
+            NewCohEl=[A1 A2 B2 B1];
+        end
+        % .....................................................................
+        A1_A2 = Coor(NewCohEl(2),2:3) - Coor(NewCohEl(1),2:3);
+        
+        if     A1_A2(1)>=0  && A1_A2(2)>=0; Quadrant=1;
+        elseif A1_A2(1)<0   && A1_A2(2)>0;  Quadrant=2;
+        elseif A1_A2(1)<=0  && A1_A2(2)<=0; Quadrant=3;
+        elseif A1_A2(1)>0   && A1_A2(2)<0;  Quadrant=4;end
+        
+        if Quadrant==2 || Quadrant==3
+            NewCohEl = [NewCohEl(3) NewCohEl(4) NewCohEl(1) NewCohEl(2)];
+        end
+    else %-----------------------------------------------------------------
+        % Correct Numbering for ms-allen
+         NewCohEl=[A1 A2 B1 B2];
     end
     % ---------------------------------------------------------------------
     CohElCounter = CohElCounter + 1;

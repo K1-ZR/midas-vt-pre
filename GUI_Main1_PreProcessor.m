@@ -84,38 +84,42 @@ TestType   = get(handles.popupmenu1,'Value')-1;
 % 5 Semi-circular bending test
 % 6 Indirect tension test
 
+% if for midas: isForMIDAS = 1
+% isForMSAllen: isForMIDAS = 0
+isForMIDAS = 1;
+
 if  TestType==1
-    im = imread([CurrentFolder, '\Gallery\', 'STT.png']);
+    im = imread([CurrentFolder, '\gallery\', 'STT.png']);
     set(handles.text4, 'visible', 'on'); set(handles.edit2, 'visible', 'on'); set(handles.text5, 'visible', 'on'); set(handles.edit3, 'visible', 'on');
     set(handles.text6, 'visible', 'off'); set(handles.edit4, 'visible', 'off'); set(handles.text31, 'visible', 'off'); set(handles.edit25, 'visible', 'off');
     set(handles.text22,'visible', 'on'); set(handles.edit17, 'visible', 'on','enable','off'); set(handles.text23, 'visible', 'on'); set(handles.edit18, 'visible', 'on','enable','off');
     set(handles.text8, 'visible', 'off'); set(handles.edit6, 'visible', 'off'); set(handles.text7, 'visible', 'off'); set(handles.edit5, 'visible', 'off');
 elseif TestType==2
-    im = imread([CurrentFolder, '\Gallery\', 'SST.png']);
+    im = imread([CurrentFolder, '\gallery\', 'SST.png']);
     set(handles.text4, 'visible', 'on'); set(handles.edit2, 'visible', 'on'); set(handles.text5, 'visible', 'on'); set(handles.edit3, 'visible', 'on');
     set(handles.text6, 'visible', 'off'); set(handles.edit4, 'visible', 'off'); set(handles.text31, 'visible', 'off'); set(handles.edit25, 'visible', 'off');
     set(handles.text22,'visible', 'on'); set(handles.edit17, 'visible', 'on','enable','off'); set(handles.text23, 'visible', 'on'); set(handles.edit18, 'visible', 'on','enable','off');
     set(handles.text8, 'visible', 'off'); set(handles.edit6, 'visible', 'off'); set(handles.text7, 'visible', 'off'); set(handles.edit5, 'visible', 'off');
 elseif TestType==3
-    im = imread([CurrentFolder, '\Gallery\', 'TPBT.png']);
+    im = imread([CurrentFolder, '\gallery\', 'TPBT.png']);
     set(handles.text4, 'visible', 'on'); set(handles.edit2, 'visible', 'on'); set(handles.text5, 'visible', 'on'); set(handles.edit3, 'visible', 'on');
     set(handles.text6, 'visible', 'on'); set(handles.edit4, 'visible', 'on'); set(handles.text31, 'visible', 'off'); set(handles.edit25, 'visible', 'off');
     set(handles.text22,'visible', 'on'); set(handles.edit17, 'visible', 'on','enable','on');set(handles.text23, 'visible', 'on'); set(handles.edit18, 'visible', 'on','enable','on');
     set(handles.text8, 'visible', 'on'); set(handles.edit6, 'visible', 'on'); set(handles.text7, 'visible', 'on'); set(handles.edit5, 'visible', 'on');
 elseif TestType==4
-    im = imread([CurrentFolder, '\Gallery\', 'FPBT.png']);
+    im = imread([CurrentFolder, '\gallery\', 'FPBT.png']);
     set(handles.text4, 'visible', 'on'); set(handles.edit2, 'visible', 'on'); set(handles.text5, 'visible', 'on'); set(handles.edit3, 'visible', 'on');
     set(handles.text6, 'visible', 'on'); set(handles.edit4, 'visible', 'on'); set(handles.text31, 'visible', 'on'); set(handles.edit25, 'visible', 'on');
     set(handles.text22,'visible', 'on'); set(handles.edit17, 'visible', 'on','enable','on');set(handles.text23, 'visible', 'on'); set(handles.edit18, 'visible', 'on','enable','on');
     set(handles.text8, 'visible', 'on'); set(handles.edit6, 'visible', 'on'); set(handles.text7, 'visible', 'on'); set(handles.edit5, 'visible', 'on');
 elseif TestType==5
-    im = imread([CurrentFolder, '\Gallery\', 'SCBT.png']);
+    im = imread([CurrentFolder, '\gallery\', 'SCBT.png']);
     set(handles.text4, 'visible', 'on'); set(handles.edit2, 'visible', 'on'); set(handles.text5, 'visible', 'on'); set(handles.edit3, 'visible', 'on');
     set(handles.text6, 'visible', 'on'); set(handles.edit4, 'visible', 'on'); set(handles.text31, 'visible', 'off'); set(handles.edit25, 'visible', 'off');
     set(handles.text22,'visible', 'on'); set(handles.edit17, 'visible', 'on');set(handles.text23, 'visible', 'on'); set(handles.edit18, 'visible', 'on','enable','on');
     set(handles.text8, 'visible', 'on'); set(handles.edit6, 'visible', 'on'); set(handles.text7, 'visible', 'on'); set(handles.edit5, 'visible', 'on');
 elseif TestType==6
-    im = imread([CurrentFolder, '\Gallery\', 'ITT.png']);
+    im = imread([CurrentFolder, '\gallery\', 'ITT.png']);
     set(handles.text4, 'visible', 'on'); set(handles.edit2, 'visible', 'on'); set(handles.text5, 'visible', 'off'); set(handles.edit3, 'visible', 'off');
     set(handles.text6, 'visible', 'off'); set(handles.edit4, 'visible', 'off'); set(handles.text31, 'visible', 'off'); set(handles.edit25, 'visible', 'off');
     set(handles.text22,'visible', 'on'); set(handles.edit17, 'visible', 'on');set(handles.text23, 'visible', 'on'); set(handles.edit18, 'visible', 'on','enable','off');
