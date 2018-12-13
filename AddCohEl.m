@@ -147,8 +147,32 @@ for CE = 1:size(NeiberEl,1)
             NewCohEl = [NewCohEl(3) NewCohEl(4) NewCohEl(1) NewCohEl(2)];
         end
     else %-----------------------------------------------------------------
+        % A_2 0----0 B_2
+        %     |    |
+        %     |    |
+        % A_1 0----0 B_1 
+        
+        % initial guess of node numbering
+        NewCohEl=[A1 A2 B1 B2];
+        
         % Correct Numbering for ms-allen
-         NewCohEl=[A1 A2 B1 B2];
+
+        % TAxis must be in Quadrant 1 or 2
+        TAxis = Coor(NewCohEl(2),2:3) - Coor(NewCohEl(1),2:3);
+
+        if     ( TAxis(1)<0 && TAxis(2)<0 ) || ...Quadrant 3 
+               ( TAxis(1)>0 && TAxis(2)<0 ) % Quadrant 4
+            NewCohEl = [A2 A1 B2 B1]; % mirror T axis
+        end
+        
+        % N-T must follow right hand rule
+        TAxis = Coor(NewCohEl(2),2:3) - Coor(NewCohEl(1),2:3);
+        CACB = El_Cen_B - El_Cen_A;
+        
+        if sum(cross([CACB 0],[TAxis 0]))<=0
+            NewCohEl=[NewCohEl(3) NewCohEl(4) NewCohEl(1) NewCohEl(2)]; % mirror N axis
+        end
+ 
     end
     % ---------------------------------------------------------------------
     CohElCounter = CohElCounter + 1;

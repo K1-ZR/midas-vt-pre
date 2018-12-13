@@ -18,7 +18,7 @@ SetGlobal;
 %%
 Tolerance = 1e-6;
 
-TT_T = [];    TT_B = [];    TT_L = [];
+TT_T = [];    TT_B = [];    TT_L = [];    TT_R = [];
 ST_T = [];    ST_B = [];    
 TPBT_LS = []; TPBT_RS = []; TPBT_LP = [];
 FPBT_LS = []; FPBT_RS = []; FPBT_LLP = []; FPBT_RLP = [];
@@ -35,6 +35,8 @@ for NN = 1:size(Coo,1)
             TT_B= [TT_B; NN];
         elseif  abs(Coo(NN,2)-min(Coo(:,2))) < Tolerance
             TT_L= [TT_L; NN];
+        elseif  abs(Coo(NN,2)-max(Coo(:,2))) < Tolerance
+            TT_R= [TT_R; NN];
         end
     % =====================================================================
     elseif     TestType==2
