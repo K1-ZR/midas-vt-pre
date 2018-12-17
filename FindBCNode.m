@@ -25,10 +25,13 @@ FPBT_LS = []; FPBT_RS = []; FPBT_LLP = []; FPBT_RLP = [];
 SCBT_LS = []; SCBT_RS = []; SCBT_LP = [];
 ITT_BS = [];  ITT_TLP = []; 
 
+
 for NN = 1:size(Coo,1)
     % =====================================================================
     if     TestType==1
-        % top bottom left
+        % top bottom left right
+        [ El_Cen, El_Edge, El_EdgeCen ] = El_Specs( CC, Coo, Con );
+        
         if      abs(Coo(NN,3)-max(Coo(:,3))) < Tolerance
             TT_T= [TT_T; NN];
         elseif  abs(Coo(NN,3)-min(Coo(:,3))) < Tolerance
