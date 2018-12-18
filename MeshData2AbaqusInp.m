@@ -119,6 +119,8 @@ if     TestType ==1
 elseif TestType==2
     BC_Node{1} = ST_T; BC_Txt{1} = 'ST_T'; 
     BC_Node{2} = ST_B; BC_Txt{2} = 'ST_B';
+    BC_Node{3} = ST_L; BC_Txt{3} = 'ST_L';
+    BC_Node{4} = ST_R; BC_Txt{4} = 'ST_R';
 elseif TestType==3
     BC_Node{1} = TPBT_LS; BC_Txt{1} = 'TPBT_LS';
     BC_Node{2} = TPBT_RS; BC_Txt{2} = 'TPBT_RS';
