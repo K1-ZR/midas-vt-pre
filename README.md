@@ -47,7 +47,3 @@ Overall flow of MIDAS-VT-Pre is shown below. The user has two options when uses 
 **Note:** all the output messages will be stored in STATUS.txt for future reference.  
 **Note:** The execution may take several minutes.  
 
-
-\begin{equation}
-a+b
-\end{equation}
