@@ -41,7 +41,7 @@ Overall flow of MIDAS-VT-Pre is shown below. The user has two options when uses 
     * Gallery folder
     * MIDAS_VT_Pre.exe 
     * splash.PNG  
-3. Verify [the suitable MATLAB Runtime](https://www.mathworks.com/products/compiler/matlab-runtime.html?s_cid=BB&nocookie=true), version 9.5, is installed on your computer.  
+3. Verify [the suitable MATLAB Runtime](https://www.mathworks.com/products/compiler/matlab-runtime.html?s_cid=BB&nocookie=true), version 9.5 (only), is installed on your computer.  
 4. Run MIDAS_VT_Pre.exe   
 
 **Note:** all the output messages will be stored in STATUS.txt for future reference.  
