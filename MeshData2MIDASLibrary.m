@@ -151,39 +151,21 @@ if size(Con,1) > NumRegEl
             IntEl(2*IntElCounter-1 , :) = [ Con(EE,5)     Con(EE,2)   IntElType    Width     Alpha ];
             IntEl(2*IntElCounter   , :) = [ Con(EE,4)     Con(EE,3)   IntElType    Width     Alpha ];
         else
-            % A_1 0----0 B_1
-            %     |    |
-            %     |    |
-            % A_2 0----0 B_2 
-            % A1, A2, B1, B2
+            X1 = Coo( Con(EE,2) , 2 );
+            Y1 = Coo( Con(EE,2) , 3 );
             
-            % A1-A2 vector is T
-            % A1-A2 vector rotate 90 deg clockwise become N
-            % Alpha is between N and positive X
-            A1 = Con(EE,2);
-            A2 = Con(EE,3);
+            X2 = Coo( Con(EE,3) , 2 );
+            Y2 = Coo( Con(EE,3) , 3 );
             
-            XA1 = Coo(A1,2);
-            YA1 = Coo(A1,3);
+            Width = ( (X1-X2)^2 + (Y1-Y2 )^2 )^0.5;
             
-            XA2 = Coo(A2,2);
-            YA2 = Coo(A2,3);
-            
-            Length = ( (XA1-XA2)^2 + (YA1-YA2)^2 )^0.5;
-            
-            TAxis = [XA2-XA1, YA2-YA1]'/Length;
-            
-            % find N Axis
-            rotationAngle = -pi()/2; % in rotation ccw is positive
-            rotationMatrix = [cos(rotationAngle), -sin(rotationAngle);
-                              sin(rotationAngle),  cos(rotationAngle)];
-            NAxis = rotationMatrix * TAxis;
-            % Alpha: angle of N and +X 
-            Alpha = atan(NAxis(2)/NAxis(1))*180/pi() ;
+            Alpha= atan((Y2-Y1)/(X2-X1));
+            Alpha= Alpha*180/pi();
+            Alpha= Alpha+90;
             
             IntElCounter = IntElCounter+1;
-            IntEl(2*IntElCounter-1 , :) = [ Con(EE,2)     Con(EE,4)   IntElType    Length     Alpha ];
-            IntEl(2*IntElCounter   , :) = [ Con(EE,3)     Con(EE,5)   IntElType    Length     Alpha ];
+            IntEl(2*IntElCounter-1 , :) = [ Con(EE,2)     Con(EE,5)   IntElType    Width     Alpha ];
+            IntEl(2*IntElCounter   , :) = [ Con(EE,3)     Con(EE,4)   IntElType    Width     Alpha ];
         end
     end
     
