@@ -86,7 +86,7 @@ TestType   = get(handles.popupmenu1,'Value')-1;
 
 % if for midas: isForMIDAS = 1
 % isForMSAllen: isForMIDAS = 0
-isForMIDAS = 0;
+isForMIDAS = 1;
 
 if  TestType==1
     im = imread([CurrentFolder, '\gallery\', 'STT.png']);
