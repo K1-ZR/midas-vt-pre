@@ -6,7 +6,8 @@
 To cite this work please use:
 * [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1477100.svg)](https://doi.org/10.5281/zenodo.1477100)
 | [BibTeX file](https://github.com/K1-ZR/midas-vt-pre/blob/master/documents/cite-midas-vt-pre.bib)
-* and [this paper](https://www.sciencedirect.com/science/article/pii/S0013794417303703)  
+* and [paper 1](https://www.sciencedirect.com/science/article/pii/S0013794417303703)  
+* and [paper 2](https://www.sciencedirect.com/science/article/pii/S2352711018303054)
 
 
 <p align="center">
